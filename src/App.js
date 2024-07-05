@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { initializeIcons } from '@fluentui/react/lib/Icons';
+import PatientRegistration from './components/PatientRegistration';
+import PatientExamination from './components/PatientExamination';
+import Prescription from './components/Prescription';
+import Payment from './components/Payment';
+import MedicinePickup from './components/MedicinePickup';
+import Report from './components/Report';
+
+initializeIcons();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Clinic and Medical Records System</h1>
+      <PatientRegistration />
+      <PatientExamination />
+      <Prescription />
+      <Payment />
+      <MedicinePickup />
+      <Report />
     </div>
   );
 }
