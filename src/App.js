@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { initializeIcons } from '@fluentui/react/lib/Icons';
+import DoctorDashboard from './components/DoctorDashboard';
+import PatientRegistration from './components/PatientRegistration';
+import CreateExamResultPage from './components/CreateExamResultPage';
+import CreatePrescriptionPage from './components/CreatePrescriptionPage';
+import PaymentPage from './components/PaymentPage';
+import PrintReceiptPage from './components/PrintReceiptPage';
+import ReportPage from './components/ReportPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+initializeIcons();
+
+const App = () => {
+  return (<div>
+    <PatientRegistration />
+    <DoctorDashboard />
+    <CreateExamResultPage />
+    <CreatePrescriptionPage />
+    <PaymentPage />
+    <PrintReceiptPage
+      patientName={"Rebekah"}
+      totalPayment={"430000"}
+      paymentReceived={"500000"}
+      changeAmount={"70000"}
+    />
+    <ReportPage />
+  </div>);
+};
 
 export default App;
